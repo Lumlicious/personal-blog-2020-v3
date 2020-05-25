@@ -1,4 +1,10 @@
 {
-  "arrowParens": "avoid",
-  "semi": false
+	"useTabs": false,
+	"printWidth": 80,
+	"tabWidth": 2,
+	"singleQuote": true,
+	"trailingComma": "none",
+	"jsxBracketSameLine": false,
+	"noSemi": true,
+	"rcVerbose": true
 }
