@@ -9,8 +9,8 @@ $code-font: fira-mono, monospace;
 $base-font-color: $white-light;
 $nav-color: $dark-blue;
 $background-color: $dark-blue;
-$link-hover: lighten($primary-color, 10%);
-$link-active: darken($primary-color, 10%);
+$link-hover: darken($primary-color, 10%);
+$link-active: lighten($primary-color, 10%);
 
 /*  Layout  */
 $base-font-size: 100; // %

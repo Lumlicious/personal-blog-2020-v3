@@ -99,6 +99,7 @@ $column: 6.25%; // 100% / 16 column layout
       color: $visited;
     }
     &:hover {
+      text-decoration: underline;
       color: $hover;
     }
     &:active,

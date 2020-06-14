@@ -167,7 +167,7 @@ p .language-text {
 }
 
 a {
-  @include links($primary-color, $tertiary-color, $link-hover, $link-active);
+  @include links($primary-color, $primary-color, $link-active, $link-active);
 }
 
 abbr {

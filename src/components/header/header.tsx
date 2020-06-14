@@ -33,9 +33,13 @@ const header = () => {
         <nav>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/" activeClassName="header__active-nav">
+                Home
+              </Link>
             </li>
-            <Link to="/about">About Me</Link>
+            <Link to="/about" activeClassName="header__active-nav">
+              About Me
+            </Link>
           </ul>
           <div className="header__social-links"></div>
         </nav>
