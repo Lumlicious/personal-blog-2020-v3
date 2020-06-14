@@ -17,6 +17,7 @@
     "gatsby-plugin-typescript": "2.4.3",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-remark-copy-linked-files": "^2.3.2",
+    "gatsby-remark-emoji": "^0.0.3",
     "gatsby-remark-images": "^3.3.4",
     "gatsby-remark-prismjs": "^3.5.1",
     "gatsby-remark-responsive-iframe": "^2.4.2",
@@ -61,7 +62,7 @@
   },
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "gatsby develop -H 0.0.0.0 -p 8080",
     "format": "prettier --write \"**/*.{tsx,ts,js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",

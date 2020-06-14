@@ -1,0 +1,41 @@
+@import '../../styles/base/colors';
+@import '../../styles/util/mixins';
+
+.post {
+  h2 {
+    // margin-bottom: 0;
+
+    a {
+      color: $primary-color;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__meta {
+    display: flex;
+    flex-direction: row;
+
+    & > div {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: $tertiary-color;
+      text-decoration: none;
+      margin-left: 0.5rem;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__description {
+    border-left: 8px solid $primary-color;
+    @include addSpace(padding-left, 1);
+  }
+}

@@ -1,0 +1,23 @@
+@import '../../styles/base/colors';
+
+.tags {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0;
+
+  & > div,
+  & > a {
+    margin-bottom: 0;
+  }
+
+  a {
+    color: $tertiary-color;
+    text-decoration: none;
+    margin-left: 0.5rem;
+
+    &:hover {
+      text-decoration: underline;
+      color: $primary-color;
+    }
+  }
+}

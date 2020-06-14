@@ -1,0 +1,62 @@
+@import '../../styles/util/mixins';
+@import '../../styles/base/variables';
+@import '../../styles/base/colors';
+
+.site {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+
+  &__content {
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+}
+
+@media screen and (min-width: $desktop-breakpoint) {
+  .site {
+    &__content {
+      max-width: 1080px;
+      @include offset(4);
+    }
+  }
+}
+
+@media screen and (min-width: $large-desktop-breakpoint) {
+  .site {
+    &__content {
+      @include offset(3);
+    }
+  }
+}
+
+// article {
+//   h1 {
+//     font-style: normal;
+//     max-width: 100%;
+//     font-size: ms(2);
+//     @include line-height(2);
+
+//     @media screen and (min-width: $desktop-breakpoint) {
+//       font-size: ms(3);
+//       @include line-height(3);
+//       max-width: 13em;
+//     }
+//   }
+
+//   p {
+//     max-width: 90%;
+
+//     @media screen and (min-width: $tablet-breakpoint) {
+//       max-width: 33em;
+//     }
+//   }
+
+//   img {
+//     max-width: 100%;
+//   }
+// }

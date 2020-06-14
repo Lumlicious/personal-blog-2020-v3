@@ -1,0 +1,180 @@
+@import '../../styles/base/typography';
+@import '../../styles/base/colors';
+@import '../../styles/util/mixins';
+@import '../../styles/base/variables';
+
+.header {
+  display: block;
+  background-color: $nav-color;
+  @include element-height(3);
+  color: white;
+  margin-bottom: 0;
+
+  &__description {
+    display: none;
+  }
+  .showbox {
+    display: none;
+  }
+}
+
+@media screen and (min-width: $desktop-breakpoint) {
+  .header {
+    @include width(4);
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    &__branding {
+      width: 70%;
+      @include margin-top(1);
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      font-family: $heading-font;
+
+      ul {
+        list-style-type: none;
+      }
+    }
+
+    &__description {
+      display: block;
+    }
+
+    .showbox {
+      display: block;
+      margin-bottom: 2rem;
+    }
+
+    &__author-name {
+      font-family: $heading-font;
+      text-transform: uppercase;
+
+      &--first {
+        font-size: 4.5rem;
+      }
+
+      &--last {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+    }
+
+    &__author-title {
+      text-transform: uppercase;
+      font-family: $body-font;
+      font-weight: bold;
+      color: $primary-color;
+      line-height: 1.2rem;
+    }
+  }
+
+  nav {
+    text-align: right;
+
+    a {
+      text-transform: uppercase;
+      text-decoration: none;
+      font-size: ms(1);
+      @include line-height(1.5);
+    }
+  }
+}
+
+@media screen and (min-width: $large-desktop-breakpoint) {
+  .header {
+    @include width(3);
+  }
+}
+
+.author {
+  &-photo {
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 110px);
+    height: 280px;
+    z-index: 9999999;
+    margin-bottom: 0;
+  }
+}
+
+// ---- CLOUD ANIMATION ---- //
+
+$size: 100%;
+$duration: 0.5s;
+$bg: #e76f51;
+
+$cloud-height: 11%;
+$cloud-width: 50%;
+$cloud-delay: 1.25s;
+$cloud-bg: linear-gradient(to bottom, #fdfbfb 0%, #ebedee 100%);
+
+$parallax-ratio: 1.618;
+$cloud-order: 1 4 2 5 3;
+
+.loader {
+  background: linear-gradient(to bottom, #90dffe 0%, #38a3d1 100%);
+  width: 100%;
+  height: 300px;
+  position: relative;
+  clip-path: inset(0 0 0 0);
+  margin-bottom: 0;
+}
+
+.cloud {
+  background: $cloud-bg;
+  width: $cloud-width;
+  position: absolute;
+  z-index: 1;
+  left: 35%;
+  animation: float-across $duration linear infinite;
+  opacity: 0;
+
+  @each $position in $cloud-order {
+    $i: index($cloud-order, $position);
+    &:nth-child(#{$i + 1}) {
+      $time: $duration * $i;
+      animation-delay: $time;
+      animation-duration: $time * $parallax-ratio + $cloud-delay;
+      bottom: $cloud-height * 1.515 * $position;
+      height: $cloud-height + 1% * (length($cloud-order) - $position);
+    }
+  }
+}
+
+@keyframes float-across {
+  0% {
+    transform: translateX(-200%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(200%);
+    opacity: 1;
+  }
+}
+
+.showbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+@keyframes bugfix {
+  from {
+    padding: 0;
+  }
+  to {
+    padding: 0;
+  }
+}
+@-webkit-keyframes bugfix {
+  from {
+    padding: 0;
+  }
+  to {
+    padding: 0;
+  }
+}

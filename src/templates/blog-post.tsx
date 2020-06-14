@@ -1,14 +1,18 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import Tags from '../components/tags/tags';
+import Bio from '../components/bio/bio';
+import Layout from '../components/layout/layout';
+import SEO from '../components/seo/seo';
 
-import Bio from '../components/bio';
-import Layout from '../components/layout';
-import SEO from '../components/seo';
+import './blog-post.scss';
 
 interface Props {
   data: any;
   pageContext: any;
   location: any;
+  description: any;
+  tags: string[];
 }
 
 const BlogPostTemplate = ({ data, pageContext, location }: Props) => {
@@ -22,10 +26,14 @@ const BlogPostTemplate = ({ data, pageContext, location }: Props) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <article>
+      <article className="blog__article">
         <header>
           <h1>{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
+          <div className="blog__meta">
+            <time>{post.frontmatter.date}</time>
+            <Tags tagList={post.frontmatter.tags} />
+          </div>
+          <p className="blog__description">{post.frontmatter.description}</p>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr />
@@ -34,7 +42,7 @@ const BlogPostTemplate = ({ data, pageContext, location }: Props) => {
         </footer>
       </article>
 
-      <nav>
+      {/* <nav>
         <ul>
           <li>
             {previous && (
@@ -51,7 +59,7 @@ const BlogPostTemplate = ({ data, pageContext, location }: Props) => {
             )}
           </li>
         </ul>
-      </nav>
+      </nav> */}
     </Layout>
   );
 };
@@ -73,6 +81,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        tags
       }
     }
   }

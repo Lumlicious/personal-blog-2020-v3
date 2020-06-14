@@ -1,0 +1,43 @@
+@import './colors';
+
+/*  Fonts   */
+$body-font: proxima-nova, sans-serif;
+$heading-font: bebas-neue-pro, sans-serif;
+$code-font: fira-mono, monospace;
+
+/*  Element Colors  */
+$base-font-color: $white-light;
+$nav-color: $dark-blue;
+$background-color: $dark-blue;
+$link-hover: lighten($primary-color, 10%);
+$link-active: darken($primary-color, 10%);
+
+/*  Layout  */
+$base-font-size: 100; // %
+$base-font-size-desktop: 112.5;
+$line-height: 1.45;
+$line-height-desktop: 1.5;
+$base: ($base-font-size / 100);
+$leading: $base * $line-height;
+
+/* Modular Scale */
+$ratio: 1.5;
+
+/*  Responsive variables  */
+$phablet-breakpoint: 37em;
+$tablet-breakpoint: 48em;
+$desktop-breakpoint: 64em;
+$large-desktop-breakpoint: 80em;
+
+/*  (font-size, line-height, margin-top, margin-bottom) */
+/* prettier-ignore */
+$headings: ( 
+  h1: (3, 3, 2, 0.5),
+  h2: (2, 2, 2, 0.5),
+  h3: (1, 1.5, 1.5, 0.5),
+  h4: (0, 1, 1, 0),
+  h5: (0, 1, 1, 0),
+  h6: (0, 1, 1, 0)
+);
+
+$column: 6.25%; // 16 column layout

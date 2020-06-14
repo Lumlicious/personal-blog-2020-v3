@@ -52,7 +52,8 @@ module.exports = {
           },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`
+          `gatsby-remark-smartypants`,
+          `gatsby-remark-emoji`
         ]
       }
     },
@@ -83,8 +84,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-web-font-loader`,
       options: {
-        google: {
-          families: ['Lora', 'Archivo Black']
+        typekit: {
+          id: `tnc3trx`
         }
       }
     }
