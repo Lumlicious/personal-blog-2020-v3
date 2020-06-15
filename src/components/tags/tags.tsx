@@ -12,7 +12,7 @@ const tags = ({ tagList }: Props) => {
         ? tagList.map((value: string, index: number) => {
             return (
               <a className="tag" key={index} href="#">
-                #{value}
+                <small>#{value}</small>
               </a>
             );
           })

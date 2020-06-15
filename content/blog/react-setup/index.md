@@ -11,7 +11,7 @@ tags:
   - 'Typescript'
   - 'Web Development'
 
-description: 'A summary of how I setup a React/Redux project with Typescript for a recent project. Also, some bonus CI setup as well.'
+description: "For my latest project I needed to spin up a new version of react and keep it up to modern standards. This involved getting Typescript up and running, which was no easy task. This post walks through the end results of my research in the hopes I can save other some time."
 ---
 
 ## Introduction

@@ -4,7 +4,7 @@ module.exports = {
     title: `The Blog of Chad Lumley`,
     author: {
       name: `Chad Lumley`,
-      summary: `Consultant to all problems of a mathematical nature.`
+      summary: `Consultant to all problems of a mathematical nature. Currently exploring game development, machine learning, and teaching cats to talk.`
     },
     description: `Tech Blog`,
     siteUrl: `https://chadlumley.dev`,
