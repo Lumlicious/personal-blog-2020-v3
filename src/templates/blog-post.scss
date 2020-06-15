@@ -19,6 +19,22 @@
     display: flex;
     flex-direction: row;
   }
+
+  &__post-nav {
+    text-align: left;
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    margin-bottom: 0;
+
+    & > div {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: $primary-color !important;
+    }
+  }
 }
 
 time {

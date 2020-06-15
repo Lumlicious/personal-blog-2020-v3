@@ -36,30 +36,31 @@ const BlogPostTemplate = ({ data, pageContext, location }: Props) => {
           <p className="blog__description">{post.frontmatter.description}</p>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
+        <nav className="blog__post-nav">
+          <div>
+            <h2>
+              {previous && (
+                <Link to={previous.fields.slug} rel="prev">
+                  ← {previous.frontmatter.title}
+                </Link>
+              )}
+            </h2>
+          </div>
+          <div>
+            <h2>
+              {next && (
+                <Link to={next.fields.slug} rel="next">
+                  {next.frontmatter.title} →
+                </Link>
+              )}
+            </h2>
+          </div>
+        </nav>
         <hr />
-        <footer>
+        <footer className="blog__footer">
           <Bio />
         </footer>
       </article>
-
-      {/* <nav>
-        <ul>
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav> */}
     </Layout>
   );
 };
