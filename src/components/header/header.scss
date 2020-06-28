@@ -7,14 +7,137 @@
   display: block;
   background-color: $nav-color;
   @include element-height(3);
-  color: white;
   margin-bottom: 0;
 
-  &__description {
+  &__branding {
     display: none;
   }
+
   .showbox {
     display: none;
+  }
+
+  &__navigation {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__hamburger {
+    @include addSpace('margin', 1);
+  }
+
+  &__mobile-menu {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+
+    input {
+      display: flex;
+      width: 2rem;
+      @include element-height(1);
+      @include addSpace('margin', 1);
+      position: absolute;
+      cursor: pointer;
+      opacity: 0;
+      z-index: 2;
+
+      &:checked ~ .header__hamburger span {
+        opacity: 1;
+        transform: rotate(-45deg) translate(-3px, -1px);
+        background: $white-light;
+      }
+
+      &:checked ~ .header__hamburger span:nth-last-child(2) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+      }
+
+      &:checked ~ .header__hamburger span:nth-last-child(3) {
+        transform: rotate(45deg) translate(0, -1px);
+      }
+
+      &:checked ~ ul {
+        transform: none;
+      }
+    }
+
+    span {
+      display: flex;
+      width: 29px;
+      height: 2px;
+      margin-bottom: 5px;
+      position: relative;
+      background: $white-light;
+      border-radius: 3px;
+      z-index: 1;
+      transform-origin: 5px 0px;
+      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+        background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+
+      &:first-child {
+        transform-origin: 0% 0%;
+      }
+
+      &:nth-last-child(2) {
+        transform-origin: 0% 100%;
+      }
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    top: 0;
+    width: 50vw;
+    height: 100vh;
+    @include addSpace('padding-right', 1.5);
+    @include addSpace('padding-top', 4);
+    background-color: #e63946;
+    -webkit-font-smoothing: antialiased;
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box; /* Firefox, other Gecko */
+    box-sizing: border-box; /* Opera/IE 8+ */
+
+    li {
+      margin-bottom: 0;
+      transition-delay: 2s;
+      text-align: right;
+      list-style-type: none;
+      @include addSpace('padding-bottom', 1);
+    }
+
+    a {
+      color: $white-light;
+      text-transform: uppercase;
+      font-family: $heading-font;
+      text-decoration: none;
+      font-size: ms(2);
+      @include line-height(1.5);
+
+      &:visited {
+        color: $white-light;
+      }
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+
+  &__side-menu {
+    display: none;
+  }
+
+  &__active-nav {
+    color: $dark-blue !important;
+    text-decoration: underline;
   }
 }
 
@@ -26,7 +149,17 @@
     top: 0;
     left: 0;
 
+    &__mobile-menu {
+      display: none;
+    }
+
+    &__side-menu {
+      display: block;
+      width: 100%;
+    }
+
     &__branding {
+      display: block;
       width: 70%;
       @include margin-top(1);
       margin-left: auto;
@@ -94,24 +227,33 @@
     //     top: 0;
     //   }
     // }
-  }
 
-  nav {
-    text-align: right;
-
-    a {
-      color: $white-light;
-      text-transform: uppercase;
-      text-decoration: none;
-      font-size: ms(1);
-      @include line-height(1.5);
-
-      &:visited {
-        color: $white-light;
+    &__navigation {
+      text-align: right;
+      ul {
+        list-style-type: none;
+        @include addSpace('margin-right', 1.5);
       }
 
-      &:hover {
-        color: $primary-color;
+      li {
+        margin-bottom: 0;
+      }
+
+      a {
+        color: $white-light;
+        text-transform: uppercase;
+        font-family: $heading-font;
+        text-decoration: none;
+        font-size: ms(1);
+        @include line-height(1.5);
+
+        &:visited {
+          color: $white-light;
+        }
+
+        &:hover {
+          color: $primary-color;
+        }
       }
     }
   }

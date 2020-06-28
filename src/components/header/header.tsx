@@ -30,20 +30,44 @@ const header = () => {
           Lumley
         </div>
         <div className="header__author-title">Sr. Front-End Engineer</div>
-        <nav>
+      </div>
+      <nav role="navigation" className="header__navigation">
+        <div className="header__mobile-menu">
+          <input type="checkbox" className="header__checkbox" />
+          <div className="header__hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul className="header__menu">
+            <li>
+              <Link to="/" activeClassName="header__active-nav">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/about" activeClassName="header__active-nav">
+                About Me
+              </Link>
+            </li>
+          </ul>
+          {/* <div className="header__social-links"></div> */}
+        </div>
+        <div className="header__side-menu">
           <ul>
             <li>
               <Link to="/" activeClassName="header__active-nav">
                 Home
               </Link>
             </li>
-            <Link to="/about" activeClassName="header__active-nav">
-              About Me
-            </Link>
+            <li>
+              <Link to="/about" activeClassName="header__active-nav">
+                About Me
+              </Link>
+            </li>
           </ul>
-          <div className="header__social-links"></div>
-        </nav>
-      </div>
+        </div>
+      </nav>
     </header>
   );
 };
