@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import './post.scss';
+import _ from 'lodash';
 
 interface Props {
   date: string;
@@ -23,7 +24,7 @@ const post = ({ date, slug, title, description, tags }: Props) => {
             {tags
               ? tags.map((value, index) => {
                   return (
-                    <a className="post__tag" key={index} href="#">
+                    <a className="post__tag" key={index} href={'/tags/' + _.kebabCase(value) + '/'}>
                       <small>#{value}</small>
                     </a>
                   );
