@@ -1,0 +1,44 @@
+@import '../../styles/base/colors';
+@import '../../styles/util/mixins';
+
+.post {
+  h1 {
+    // margin-bottom: 0;
+
+    a {
+      color: $primary-color;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__meta {
+    display: flex;
+    flex-direction: column-reverse;
+
+    & > div {
+      margin-bottom: 0;
+    }
+  }
+
+  &__description {
+    border-left: 8px solid $primary-color;
+    @include addSpace(padding-left, 1);
+  }
+}
+
+@media screen and (min-width: $tablet-breakpoint) {
+  .post {
+    &__meta {
+      display: flex;
+      flex-direction: row;
+    }
+
+    &__date {
+      @include addSpace(margin-right, 1);
+    }
+  }
+}

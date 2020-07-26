@@ -4,7 +4,7 @@ module.exports = {
     title: `The Blog of Chad Lumley`,
     author: {
       name: `Chad Lumley`,
-      summary: `Consultant to all problems of a mathematical nature.`
+      summary: `Consultant to all problems of a mathematical nature. Currently exploring game development, machine learning, and teaching cats to talk.`
     },
     description: `Tech Blog`,
     siteUrl: `https://chadlumley.dev`,
@@ -41,7 +41,8 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590
+              maxWidth: 590,
+              showCaptions: true
             }
           },
           {
@@ -52,7 +53,8 @@ module.exports = {
           },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`
+          `gatsby-remark-smartypants`,
+          `gatsby-remark-emoji`
         ]
       }
     },
@@ -83,8 +85,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-web-font-loader`,
       options: {
-        google: {
-          families: ['Lora', 'Archivo Black']
+        typekit: {
+          id: `tnc3trx`
         }
       }
     }

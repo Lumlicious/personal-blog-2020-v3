@@ -1,0 +1,55 @@
+// Apply the baseline grid as background
+.grid {
+  background-image: linear-gradient(
+    to bottom,
+    hsla(200, 100%, 50%, 0.3) 1px,
+    transparent 1px
+  );
+  background-repeat: repeat;
+  background-position: left top;
+  background-size: 100% #{(100 / 100 * 16) * $line-height + 'px'};
+
+  @media screen and (min-width: $tablet-breakpoint) {
+    background-size: 100% #{($base-font-size-desktop / 100 * 16) * $line-height-desktop +
+      'px'};
+  }
+}
+
+.double-grid {
+  @extend .grid;
+  background-image: linear-gradient(
+      to bottom,
+      hsla(200, 100%, 50%, 0.3) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      hsla(200, 100%, 50%, 0.3) 1px,
+      transparent 1px,
+      transparent #{0.5 * (100 / 100 * 16) * $line-height + 'px'},
+      hsla(200, 100%, 50%, 0.2) #{0.5 * (100 / 100 * 16) * $line-height + 'px'},
+      transparent #{0.5 * (100 / 100 * 16) * $line-height + 1 + 'px'},
+      transparent #{(100 / 100 * 16) * $line-height + 'px'}
+    );
+
+  @media screen and (min-width: $tablet-breakpoint) {
+    background-image: linear-gradient(
+        to bottom,
+        hsla(200, 100%, 50%, 0.3) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        to bottom,
+        hsla(200, 100%, 50%, 0.3) 1px,
+        transparent 1px,
+        transparent #{0.5 * ($base-font-size-desktop / 100 * 16) *
+          $line-height-desktop + 'px'},
+        hsla(200, 100%, 50%, 0.2) #{0.5 * ($base-font-size-desktop / 100 * 16) *
+          $line-height-desktop + 'px'},
+        transparent #{0.5 * ($base-font-size-desktop / 100 * 16) *
+          $line-height-desktop + 1 + 'px'},
+        transparent #{($base-font-size-desktop / 100 * 16) * $line-height-desktop +
+          'px'}
+      );
+  }
+}

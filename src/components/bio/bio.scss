@@ -1,0 +1,14 @@
+@import '../../styles/base/colors';
+@import '../../styles/util/mixins';
+
+.bio {
+  display: inline-flex;
+
+  &__description {
+    @include addSpace('margin-left', 1);
+  }
+
+  h4 {
+    color: $primary-color;
+  }
+}

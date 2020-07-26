@@ -1,0 +1,225 @@
+@import './variables';
+@import '../util/mixins';
+
+html {
+  font-size: #{$base-font-size + '%'};
+  font-family: $body-font;
+  color: $base-font-color;
+  font-weight: 300;
+  background-color: $background-color;
+
+  @media screen and (min-width: $tablet-breakpoint) {
+    font-size: #{$base-font-size-desktop + '%'};
+  }
+}
+
+/* Setup vertical rhythm for all elements */
+* {
+  @include line-height(1);
+  @include margin-bottom(1);
+  @include margin-top(0);
+}
+
+/*  Setup the modular scale for headers */
+@each $heading, $properties in $mobile-headings {
+  #{$heading} {
+    font-size: ms(nth($properties, 1));
+    @include line-height(nth($properties, 2));
+    @include margin-top(nth($properties, 3));
+    @include margin-bottom(nth($properties, 4));
+  }
+}
+
+@media screen and (min-width: $tablet-breakpoint) {
+  @each $heading, $properties in $headings {
+    #{$heading} {
+      font-size: ms(nth($properties, 1));
+      @include line-height(nth($properties, 2));
+      @include margin-top(nth($properties, 3));
+      @include margin-bottom(nth($properties, 4));
+    }
+  }
+}
+
+body {
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+small,
+figcaption {
+  font-size: ms(-1);
+  text-align: center;
+}
+
+.gatsby-resp-image-wrapper {
+  @include addSpace('margin-bottom', 0.5);
+
+  a {
+    margin-bottom: 0;
+
+    span {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.gatsby-resp-image-figure {
+  margin-left: 0;
+}
+
+.small-caps {
+  font-feature-settings: 'c2sc', 'smcp';
+}
+
+strong {
+  font-weight: 700;
+}
+
+blockquote {
+  max-width: 30rem;
+  background: $tertiary-color;
+  border-left: 10px solid $primary-color;
+  font-size: ms(0);
+  @include addSpace(padding, 1);
+  @include margin-top(1);
+  @include margin-bottom(1);
+  quotes: '\201C''\201D''\2018''\2019';
+}
+
+input,
+abbr,
+acronym,
+blockquote,
+code,
+kbd,
+q,
+samp,
+var {
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+article {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-rendering: optimizeLegibility;
+    text-transform: uppercase;
+    hyphens: none;
+  }
+
+  h1 {
+    color: $primary-color;
+    font-style: normal;
+  }
+
+  h1,
+  h2 {
+    font-family: $heading-font;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $body-font;
+    font-weight: 400;
+  }
+
+  p {
+    font-style: normal;
+    font-variant-ligatures: common-ligatures;
+    font-variant-numeric: oldstyle-nums;
+    hanging-punctuation: first;
+    max-width: 34rem;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    hyphens: auto;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: antialiased;
+
+    & + p {
+      @include addSpace(text-indent, 1);
+    }
+  }
+
+  /* Lists */
+  ul,
+  ol {
+    padding-inline-start: $line-height * 1em;
+    max-width: 32rem;
+    @include margin-top(1);
+
+    @media screen and (min-width: $tablet-breakpoint) {
+      padding-left: 0;
+      list-style-position: outside;
+    }
+  }
+
+  li {
+    margin-bottom: 0;
+  }
+}
+
+/* Code */
+
+// Overriding prisim styles
+pre {
+  @include addSpace(margin-top, 1, !important);
+  @include addSpace(margin-bottom, 1, !important);
+  @include addSpace(padding, 1, !important);
+}
+
+.gatsby-highlight,
+.language-text {
+  font-size: 16px !important;
+  font-family: $code-font !important;
+
+  @media screen and (min-width: $tablet-breakpoint) {
+    font-size: $base + 'px';
+  }
+}
+
+p .language-text {
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important;
+}
+
+a {
+  @include links($primary-color, $primary-color, $link-active, $link-active);
+}
+
+abbr {
+  -webkit-font-variant: small-caps;
+  -moz-font-variant: small-caps;
+  -ms-font-variant: small-caps;
+  font-variant: small-caps;
+  font-weight: 600;
+  text-transform: lowercase;
+  color: gray;
+}
+
+abbr[title]:hover {
+  cursor: help;
+}
+
+hr {
+  @include margin-bottom(1);
+  @include margin-top(1);
+}
+
+figure {
+  @include margin-bottom(1);
+  @include margin-top(1);
+  max-width: 34rem;
+}

@@ -1,3 +1,3 @@
 /* eslint-disable */
 // custom typefaces
-import 'prismjs/themes/prism.css';
+import './src/styles/vendor/prism-material-light.css';

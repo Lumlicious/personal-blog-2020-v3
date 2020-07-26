@@ -1,2 +1,8 @@
-@import './base/reset';
+// @import './base/reset';
+@import './base/normalize';
+@import './base/variables';
+@import './base/colors';
 @import './base/typography';
+
+/* Show Baseline Visualization */
+// @import './util/baseline';
