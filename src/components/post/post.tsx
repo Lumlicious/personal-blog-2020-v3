@@ -16,9 +16,9 @@ const post = ({ date, slug, title, description, tags }: Props) => {
   return (
     <article>
       <div className="post">
-        <h1 className="post__title">
+        <h2 className="post__title">
           <Link to={slug}>{title}</Link>
-        </h1>
+        </h2>
         <div className="post__meta">
           <div className="post__date">{date}</div>
           <Tags tagList={tags} />

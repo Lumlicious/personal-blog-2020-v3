@@ -14,7 +14,7 @@ interface Props {
 
 // Components
 import { Link, graphql } from 'gatsby';
-const Tags = ({ pageContext, data }: Props) => {
+const Tags = ({ pageContext, data, location }: Props) => {
   const { tag } = pageContext;
   const siteTitle = data.site.siteMetadata.title;
   const { edges, totalCount } = data.allMarkdownRemark;
@@ -25,7 +25,7 @@ const Tags = ({ pageContext, data }: Props) => {
     <Layout location={location} title={siteTitle}>
       <SEO title={siteTitle} description={tag} />
       <div>
-  <h1>{`#${tag}`}</h1>
+        <h1>{`#${tag}`}</h1>
         {/* <h3>{tagHeader}</h3> */}
         <ul>
           {edges.map(({ node }) => {

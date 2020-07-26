@@ -2,8 +2,12 @@
 @import '../../styles/util/mixins';
 
 .post {
-  h1 {
-    // margin-bottom: 0;
+  h2 {
+    // Needs to switch to h1 for mobile, but this was the best way I could find to do it
+    font-size: ms(2);
+    @include line-height(2);
+    @include margin-top(2);
+    @include margin-bottom(0.5);
 
     a {
       color: $primary-color;
