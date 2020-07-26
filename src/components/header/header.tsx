@@ -23,13 +23,15 @@ const header = () => {
             </div>
           </div>
         </Link>
-        <div className="header__author-name header__author-name--first">
-          Chad
+        <div className="header__author-container">
+          <div className="header__author-name header__author-name--first">
+            Chad
+          </div>
+          <div className="header__author-name header__author-name--last">
+            Lumley
+          </div>
+          <div className="header__author-title">Sr. Front-End Engineer</div>
         </div>
-        <div className="header__author-name header__author-name--last">
-          Lumley
-        </div>
-        <div className="header__author-title">Sr. Front-End Engineer</div>
       </div>
       <nav role="navigation" className="navigation">
         <div className="navigation__mobile-menu">

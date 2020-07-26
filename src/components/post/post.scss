@@ -2,7 +2,7 @@
 @import '../../styles/util/mixins';
 
 .post {
-  h2 {
+  h1 {
     // margin-bottom: 0;
 
     a {
@@ -17,25 +17,28 @@
 
   &__meta {
     display: flex;
-    flex-direction: row;
+    flex-direction: column-reverse;
 
     & > div {
       margin-bottom: 0;
-    }
-
-    a {
-      color: $tertiary-color;
-      text-decoration: none;
-      margin-left: 0.5rem;
-
-      &:hover {
-        text-decoration: underline;
-      }
     }
   }
 
   &__description {
     border-left: 8px solid $primary-color;
     @include addSpace(padding-left, 1);
+  }
+}
+
+@media screen and (min-width: $tablet-breakpoint) {
+  .post {
+    &__meta {
+      display: flex;
+      flex-direction: row;
+    }
+
+    &__date {
+      @include addSpace(margin-right, 1);
+    }
   }
 }

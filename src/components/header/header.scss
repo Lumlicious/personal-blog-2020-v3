@@ -2,6 +2,7 @@
 @import '../../styles/base/colors';
 @import '../../styles/util/mixins';
 @import '../../styles/base/variables';
+@import '../../styles/util/mixins';
 
 .header {
   display: block;
@@ -10,11 +11,55 @@
   margin-bottom: 0;
 
   &__branding {
-    display: none;
+    position: absolute;
+    width: 100vw;
   }
 
   .showbox {
-    display: none;
+    // display: none;
+    @include element-height(8);
+  }
+
+  .author {
+    &-photo {
+      position: absolute;
+      bottom: 2rem;
+      right: 11rem;
+      height: 11rem;
+      z-index: 9999999;
+      margin-bottom: 0;
+    }
+  }
+
+  &__author-container {
+    position: absolute;
+    top: 3rem;
+    right: 2rem;
+    text-align: center;
+  }
+
+  &__author-name {
+    font-family: $heading-font;
+    text-transform: uppercase;
+
+    &--first {
+      font-size: 4.5rem;
+    }
+
+    &--last {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__author-title {
+    text-transform: uppercase;
+    font-family: $body-font;
+    font-weight: bold;
+    color: $primary-color;
+    line-height: 1.2rem;
+    width: 10rem;
+    text-align: center;
   }
 }
 
@@ -126,7 +171,7 @@
       }
 
       &:hover {
-        color: $primary-color;
+        color: $white-light;
       }
     }
   }
@@ -138,6 +183,16 @@
   &__active-nav {
     color: $dark-blue !important;
     text-decoration: underline;
+  }
+}
+
+@media screen and (min-width: $tablet-breakpoint) {
+  .header {
+    .author {
+      &-photo {
+        bottom: 2rem;
+      }
+    }
   }
 }
 
@@ -210,6 +265,7 @@
     left: 0;
 
     &__branding {
+      position: relative;
       display: block;
       width: 70%;
       @include margin-top(1);
@@ -227,9 +283,21 @@
       }
     }
 
+    .author {
+      &-photo {
+        position: absolute;
+        bottom: 0;
+        left: calc(50% - 110px);
+        height: 280px;
+        z-index: 9999999;
+        margin-bottom: 0;
+      }
+    }
+
     .showbox {
       display: block;
       margin-bottom: 2rem;
+      height: auto;
     }
 
     &__author-name {
@@ -252,6 +320,14 @@
       font-weight: bold;
       color: $primary-color;
       line-height: 1.2rem;
+      text-align: center;
+      margin: auto;
+    }
+
+    &__author-container {
+      position: relative;
+      top: 0;
+      right: auto;
     }
   }
 }
@@ -259,17 +335,17 @@
 @media screen and (min-width: $large-desktop-breakpoint) {
   .header {
     @include width(3);
-  }
-}
 
-.author {
-  &-photo {
-    position: absolute;
-    bottom: 0;
-    left: calc(50% - 110px);
-    height: 280px;
-    z-index: 9999999;
-    margin-bottom: 0;
+    .author {
+      &-photo {
+        position: absolute;
+        bottom: 0;
+        left: calc(50% - 110px);
+        height: 280px;
+        z-index: 9999999;
+        margin-bottom: 0;
+      }
+    }
   }
 }
 

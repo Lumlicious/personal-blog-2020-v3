@@ -14,6 +14,10 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    @include addSpace(margin-top, 4);
+
+    @include addSpace(padding-left, 1);
+    @include addSpace(padding-right, 1);
   }
 }
 
@@ -22,6 +26,7 @@
     &__content {
       max-width: 1080px;
       @include offset(4);
+      margin-top: 0;
     }
   }
 }
@@ -30,6 +35,8 @@
   .site {
     &__content {
       @include offset(3);
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 }
