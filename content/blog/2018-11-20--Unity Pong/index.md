@@ -8,6 +8,7 @@ category: 'Unity'
 tags:
   - 'Unity 2018'
   - 'Tutorial'
+  - 'Game Development'
   - 'C#'
 description: 'The results of a personal code jam to recreate a pixel-perfect classic pong game in Unity. Follow along as we recreate the MOTHER OF ALL GAMES. Well, probably not, but close enough.'
 ---
@@ -22,8 +23,8 @@ The final results for the project can be found here: [Github - Classic Pong](htt
 
 ## Lets get started!
 
-![Pong](./Pong.png)
-(From Wikipedia)
+![A screenshot from the original game of Pong (Wikipedia)](./Pong.png)
+
 
 To begin this project we'll need a few things:
 
@@ -320,12 +321,13 @@ Now we need to add the imported `PixelArtCamera.cs` script to the camera to rend
 
 To display the score we need to create a UI layer where the text can live. Right click in the hierarchy window and create a new canvas.
 
-- Canvas
-    - Render Mode: Screen Space - Camera 
-    - Render Camera: Drag MainCamera to input
-- Canvas Scaler: 
-    - UI Scale Mode: Scale with Screen Size 
-    - Reference resolution: 90 x 160 - Screen Match Mode: Expand
+#### Canvas
+- Render Mode: Screen Space - Camera 
+- Render Camera: Drag MainCamera to input
+
+#### Canvas Scaler: 
+- UI Scale Mode: Scale with Screen Size 
+- Reference resolution: 90 x 160 - Screen Match Mode: Expand
 
 ![Canvas Settings](./Unity-Canvas-Settings.PNG)
 
@@ -445,9 +447,4 @@ In the `Update()` method for `Ball.cs`:
 
 ![Pong Final](./Pong-Animation.gif)
 
-Hopefully you should be able to hit play and start Pong-ing away! Try tweaking the settings for the ball and paddle speeds to find a perfect balance.
-
- In case I missed anything the full project can be found on my [Github - Classic Pong](https://github.com/Lumlicious/Unity-Classic-Pong). If you have any questions or updates, feel free to fork and create a pull request.
-
-Thanks,
-CL
+Hopefully you should be able to hit play and start Pong-ing away! Try tweaking the settings for the ball and paddle speeds to find a perfect balance. In case I missed anything the full project can be found on my [Github - Classic Pong](https://github.com/Lumlicious/Unity-Classic-Pong). If you have any questions or updates, feel free to fork and create a pull request.

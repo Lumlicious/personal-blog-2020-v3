@@ -12,11 +12,8 @@ tags:
   - 'Game Development'
 description: "I recently discovered I was writing my Unity code the 'Old Fashoned' game developer way by using classical inheritance. Unity was built on the foundation of using Composition, a modular way to build objects. Let's talk about the differences."
 ---
-<figure>
-	<blockquote>
-		<p>"In Unity, GameObjects are constructed through composition rather than classical inheritance."</p>
-	</blockquote>
-</figure>
+
+> "In Unity, GameObjects are constructed through composition rather than classical inheritance."
 
 
 ## Inheritace

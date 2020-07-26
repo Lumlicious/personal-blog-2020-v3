@@ -163,8 +163,8 @@
       text-transform: uppercase;
       font-family: $heading-font;
       text-decoration: none;
-      font-size: ms(2);
-      @include line-height(1.5);
+      font-size: ms(1);
+      @include line-height(1);
 
       &:visited {
         color: $white-light;

@@ -63,6 +63,4 @@ public class PlayerClass : MonoBehavior {
 
 In this example the `playerPrefab` reference variable is exposed to the editor, but remains private. As an added level of protection, the prefab reference is being stored in it's own variable and the instance of the prefab is being stored in another. This is a great pattern for instantiating a `GameObject`.
 
----
-
 For more information on `[SerializeField]` check out the [Unity Reference](https://docs.unity3d.com/ScriptReference/SerializeField.html)

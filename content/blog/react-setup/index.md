@@ -155,7 +155,7 @@ If Typescript wasn't installed during the setup, use:
 $ yarn add typescript @types/node @types/react @types/react-dom
 ```
 
-> note: The @types is a repo for Typescript Type definitions that make non-typescript libraries work with Typescript linting. For more info, check out the repo: [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped) when the running the `create` command
+> Note: The @types is a repo for Typescript Type definitions that make non-typescript libraries work with Typescript linting. For more info, check out the repo: [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped) when the running the `create` command
 
 ## Redux Setup
 
